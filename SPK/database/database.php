@@ -1,13 +1,15 @@
 <?php 
 
-$host="localhost:8080";
+$host="localhost";
 $user="root";
 $pass="";
-$db="spk_php_native";
+$db="efikasi";
 
-public function cek_koneksi()
-{
-	
+$koneksi = mysqli_connect($host,$user,$pass);
+$koneksi_database = mysqli_connect($host,$user,$pass,$db);
+
+session_start();
+if(!isset($_SESSION['login'])){
+	$_SESSION['login']=FALSE;
 }
-
 ?>
